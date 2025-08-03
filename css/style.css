@@ -135,6 +135,28 @@ body {
 }
 /* Common CSS End */
 
+.main-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.main-header.fixed-header {
+    animation: sticky-anim .5s linear 1;
+    -webkit-animation: sticky-anim .5s linear 1;
+}
+
+@keyframes sticky-anim {
+    0%{
+        top: -32px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
 .main-header .main-nav {
     background-color: var(--black_color);
 }
