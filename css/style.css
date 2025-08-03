@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/**
+    Author: Rifat Bhiuya
+    Author email: hello.rifatbhuiya@gmail.com
+    Version: 0.0.0.1
+*/
+
+/**
+----------------
+Table Of Content
+----------------
+0. Common CSS Start
+1. Main header CSS Start
+1. Hero CSS Start
+*/
+
+:root { 
+    /* Colors */
+    --gold_color: #D4AF37;
+    --royal_blue: #1E40AF;
+    --dark_gray: #1F1F1F;
+    --silver_gray: #C0C0C0;
+    --white_color: #ffffff;
+    --black_color: #000000;
+
+    /* Round */
+    --round_sm: 5px;
+    --round_md: 10px;
+    --round_lg: 25px;
+    --round_full: 50%;
+
+    /* Typography - {Typescale, 16px based - 1.200 major thread} */
+    --big_title: 52px;
+    --h1: 48px;
+    --h2: 40px;
+    --h3: 33px;
+    --h4: 27px;
+    --h5: 23px;
+    --h6: 19px;
+    --lg: 19px;
+    --bs: 16px;
+    --sm: 13px;
+
+    /* Duration */
+    --transition: all ease-in-out .5s;
+
+    /* Font Family */
+    --sans_serif: "Inter", sans-serif;
+    --serif: "Playfair Display", serif;
+    --script: "Allura", cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+li,
+span,
+address,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+h5 {
+    font-size: var(--h5);
+}
+
+h6 {
+    font-size: var(--h6);
+}
+
+a,
+button,
+::after,
+::before {
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+body {
+    scroll-behavior: smooth;
+    font-size: var(--bs);
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: var(--sans_serif);
+}
+/* Common CSS End */
+
+.main-header .main-nav {
+    background-color: var(--black_color);
+}
+
+.main-nav .nav-items {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
+
+.main-nav .nav-items a {
+    color: var(--silver_gray);
+    position: relative;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+}
+
+.main-nav .nav-items a.active {
+    color: var(--gold_color);
+}
+
+.main-nav .nav-items a::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--gold_color);
+}
+
+.main-nav .nav-items a:hover {
+    color: var(--gold_color);
+}
+
+.main-nav .nav-items a:hover::after {
+    width: calc(100% - 20px);
+}
+
+.main-nav .nav-items a.action::after {
+    display: none;
+}
+
+.main-nav .nav-items a.action {
+    padding: 6px 24px;
+    font-weight: 600;
+    color: var(--dark_gray);
+    background-color: var(--gold_color);
+    border-radius: var(--round_lg);
+    -webkit-border-radius: var(--round_lg);
+    -moz-border-radius: var(--round_lg);
+    -ms-border-radius: var(--round_lg);
+    -o-border-radius: var(--round_lg);
+}
+
+.main-nav .nav-items a.action:hover {
+    color: var(--dark_gray);
+    background-color: var(--silver_gray);
+}
+
+.main-nav .logo a {
+    width: 120px;
+}
+/* Main header CSS End */
+
+.heroarea {
+    height: 100vh;
+    background: url(../images/hero_bg.webp) no-repeat center / cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: var(--white_color);
+}
+
+.heroarea::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.heroarea h1 {
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: var(--big_title);
+}
+
+.heroarea .buttons li a {
+    font-weight: 500;
+    padding: 8px 40px;
+    border-radius: var(--round_lg);
+    -webkit-border-radius: var(--round_lg);
+    -moz-border-radius: var(--round_lg);
+    -ms-border-radius: var(--round_lg);
+    -o-border-radius: var(--round_lg);
+}
+
+.heroarea .buttons li:first-child a {
+    color: var(--white_color);
+    border: 1.5px solid var(--silver_gray);
+}
+
+.heroarea .buttons li:first-child a:hover {
+    background-color: var(--silver_gray);
+    color: var(--royal_blue);
+}
+
+.heroarea .buttons li:last-child a {
+    background-color: var(--silver_gray);
+    color: var(--royal_blue);
+    border: 1.5px solid transparent;
+}
+
+.heroarea .buttons li:last-child a:hover {
+    color: var(--black_color);
+}
+/* Hero CSS End */
